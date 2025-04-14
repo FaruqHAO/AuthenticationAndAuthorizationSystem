@@ -1,0 +1,13 @@
+﻿@page "/accountant"
+
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize(Roles = $"{AuthenticationInitalData.SuperAdminRole},{AuthenticationInitalData.AccountantRole}")]
+
+<PageTitle>Accountant</PageTitle>
+
+<h1>Accountant page </h1>
+
+<AuthorizeView>
+    Hello @context.User.Identity?.Name!
+</AuthorizeView>

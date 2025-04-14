@@ -1,0 +1,13 @@
+﻿@page "/hr"
+
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize(Roles = $"{AuthenticationInitalData.SuperAdminRole},{AuthenticationInitalData.HrRole}")]
+
+<PageTitle>HR</PageTitle>
+
+<h1>HR page </h1>
+
+<AuthorizeView>
+    Hello @context.User.Identity?.Name!
+</AuthorizeView>
